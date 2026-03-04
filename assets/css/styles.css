@@ -249,8 +249,19 @@ form input, form textarea { width:100%; margin-top:.35rem; border:1px solid #a8b
   .site-nav ul { display:flex; align-items:center; gap:1rem; margin:0; }
   .nav-close,
   .nav-overlay,
-  .nav-cta { display:none; }
+  .nav-cta,
+  .cta-button,
+  .mobile-sticky-cta,
+  .mobile-drawer-cta { display:none; }
   .site-nav a.button { padding-inline:.95rem; }
+
+  .hero-banner,
+  .hero-divider {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
   .card-grid { grid-template-columns:repeat(3,1fr); gap: 1.2rem; }
   .split { grid-template-columns:1fr 1fr; align-items:center; }
   .two-col { grid-template-columns:1fr 1fr; }
