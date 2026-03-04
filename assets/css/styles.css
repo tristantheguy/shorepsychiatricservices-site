@@ -76,7 +76,7 @@ form input, form textarea { width:100%; margin-top:.35rem; border:1px solid #a8b
   background-image: url("../images/baybridge.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.22;
+  opacity: 0.35;
   filter: grayscale(10%) saturate(90%);
   pointer-events: none;
 }
@@ -85,7 +85,7 @@ form input, form textarea { width:100%; margin-top:.35rem; border:1px solid #a8b
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.90);
+  background: rgba(255,255,255,0.72);
   pointer-events: none;
 }
 
@@ -93,4 +93,3 @@ form input, form textarea { width:100%; margin-top:.35rem; border:1px solid #a8b
   position: relative;
   z-index: 1;
 }
-
