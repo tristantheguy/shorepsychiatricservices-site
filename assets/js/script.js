@@ -7,6 +7,32 @@ const desktopNavQuery = window.matchMedia('(min-width: 900px)');
 if (navToggle && siteNav && navOverlay && navClose) {
   const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
   let previousFocus = null;
+  let lockedScrollY = 0;
+  let isBodyScrollLocked = false;
+
+  const lockBodyScroll = () => {
+    if (isBodyScrollLocked) {
+      return;
+    }
+
+    lockedScrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${lockedScrollY}px`;
+    document.body.style.width = '100%';
+    isBodyScrollLocked = true;
+  };
+
+  const unlockBodyScroll = () => {
+    if (!isBodyScrollLocked) {
+      return;
+    }
+
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, lockedScrollY);
+    isBodyScrollLocked = false;
+  };
 
   const setOpenState = (isOpen) => {
     siteNav.classList.toggle('open', isOpen);
@@ -14,7 +40,12 @@ if (navToggle && siteNav && navOverlay && navClose) {
     navOverlay.hidden = !isOpen;
     navToggle.setAttribute('aria-expanded', String(isOpen));
     siteNav.setAttribute('aria-hidden', String(!isOpen));
-    document.body.classList.toggle('nav-open', isOpen);
+
+    if (isOpen) {
+      lockBodyScroll();
+    } else {
+      unlockBodyScroll();
+    }
 
     if (isOpen) {
       previousFocus = document.activeElement;
@@ -87,7 +118,7 @@ if (navToggle && siteNav && navOverlay && navClose) {
       navOverlay.hidden = true;
       siteNav.setAttribute('aria-hidden', 'false');
       navToggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('nav-open');
+      unlockBodyScroll();
       return;
     }
 

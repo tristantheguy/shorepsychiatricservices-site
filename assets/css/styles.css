@@ -13,7 +13,10 @@
   --shadow-soft: 0 12px 28px rgba(23, 48, 66, 0.09);
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   font-family: "Inter", "Avenir Next", "Segoe UI", "SF Pro Text", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -25,6 +28,7 @@ body {
     #ffffff;
   line-height: 1.62;
   letter-spacing: 0.01em;
+  overflow-x: hidden;
 }
 h1, h2, h3, h4 { line-height: 1.22; letter-spacing: -0.01em; margin: 0 0 0.7rem; }
 h1 { font-weight: 750; }
@@ -61,9 +65,9 @@ header {
   position: fixed;
   top: 0;
   right: 0;
-  width: min(300px, 86vw);
-  max-width: 320px;
-  height: 100dvh;
+  width: min(300px, 88vw);
+  max-width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -71,7 +75,8 @@ header {
   background: var(--surface);
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.16);
   transform: translateX(100%);
-  transition: transform 220ms ease;
+  transition: transform 240ms ease;
+  overflow-y: auto;
   z-index: 1300;
 }
 .site-nav.open { transform: translateX(0); }
@@ -82,14 +87,13 @@ header {
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(16, 28, 36, 0.6);
+  background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   pointer-events: none;
   transition: opacity 220ms ease;
   z-index: 1200;
 }
 .nav-overlay.open { opacity: 1; pointer-events: auto; }
-body.nav-open { overflow: hidden; }
 .button, .button-secondary {
   display:inline-flex;
   align-items: center;
