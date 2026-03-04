@@ -263,12 +263,16 @@ form input, form textarea { width:100%; margin-top:.35rem; border:1px solid #a8b
     margin-inline: auto;
   }
 
-  header,
-  .site-header {
+  html,
+  body {
+    overflow: visible;
+  }
+
+  #site-header {
     position: sticky;
     top: 0;
-    z-index: 2000;
-    background: rgba(255,255,255,0.96);
+    z-index: 5000;
+    background: #fff;
   }
 
   .nav-toggle { display:none; }
@@ -300,13 +304,10 @@ form input, form textarea { width:100%; margin-top:.35rem; border:1px solid #a8b
     display:none !important;
   }
 
-  .nav-overlay {
+  .nav-overlay,
+  .nav-drawer {
     display: none !important;
     pointer-events: none !important;
-  }
-
-  .nav-drawer {
-    pointer-events: none;
   }
 
   .site-nav a.button { padding-inline:.95rem; }
