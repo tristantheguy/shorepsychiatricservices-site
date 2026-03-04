@@ -19,7 +19,10 @@ body {
   font-family: "Inter", "Avenir Next", "Segoe UI", "SF Pro Text", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1.0625rem;
   color: var(--text);
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(63,111,140,0.05), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(125,168,163,0.06), transparent 40%),
+    #ffffff;
   line-height: 1.62;
   letter-spacing: 0.01em;
 }
@@ -34,7 +37,22 @@ img { max-width: 100%; height: auto; }
 .skip-link { position: absolute; left: -9999px; top: auto; }
 .skip-link:focus { left: .75rem; top: .75rem; background:#fff; padding:.5rem .75rem; border:2px solid var(--brand); z-index: 2000; }
 .container { width: min(1080px, 92%); margin: 0 auto; }
-.site-header { position: sticky; top:0; z-index:1000; background:rgba(246,251,253,.96); border-bottom:1px solid var(--border); backdrop-filter: blur(6px); }
+main,
+.container,
+.content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.site-header { position: sticky; top:0; z-index:1000; background:rgba(255,255,255,.92); border-bottom:1px solid rgba(0,0,0,.05); backdrop-filter: blur(8px); }
 .nav-wrap { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:74px; }
 .brand { font-weight:700; text-decoration:none; color:var(--text); }
 .nav-toggle { border:1px solid var(--border); background:var(--surface); color:var(--text); border-radius:.5rem; padding:.5rem .65rem; }
@@ -60,11 +78,48 @@ img { max-width: 100%; height: auto; }
 .button:hover { background:var(--brand-deep); color:#fff; transform: translateY(-1px); }
 .button-secondary { background:transparent; border-color:var(--brand); color:var(--brand-deep); }
 .button-secondary:hover { background: rgba(47, 111, 147, 0.08); border-color: var(--brand-deep); color: var(--brand-deep); }
+button,
+.cta-button,
+.btn,
+a.button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+.cta-button:hover,
+.btn:hover,
+a.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
 .hero { background: linear-gradient(150deg, #deeff7 0%, #eff7fb 50%, #f7f1e8 100%); border-bottom:1px solid var(--border); padding:4.6rem 0 3.2rem; }
 .hero h1 { line-height:1.1; font-size:clamp(2.1rem, 5vw, 3.35rem); margin-bottom:.8rem; }
+.hero-banner h1 { text-shadow: 0 2px 8px rgba(0,0,0,0.15); }
 .hero p { color:var(--muted); max-width:58ch; font-size: 1.06em; }
 .cta-group { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1.45rem; }
 main section { padding:3.6rem 0; }
+section {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-divider {
+  height: 2px;
+  width: 60px;
+  background: #7da8a3;
+  margin: 40px auto;
+  border-radius: 2px;
+}
 .section-title { font-size:clamp(1.6rem, 3vw, 2.2rem); margin-bottom:.45rem; }
 .section-intro { color:var(--muted); margin-top:0; max-width: 62ch; }
 .card-grid { display:grid; grid-template-columns:1fr; gap:1rem; margin-top:1.1rem; }
@@ -74,6 +129,20 @@ main section { padding:3.6rem 0; }
   border-radius:15px;
   padding:1.35rem;
   box-shadow:var(--shadow-soft);
+}
+.card,
+.service-card,
+.feature-box {
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover,
+.service-card:hover,
+.feature-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.12);
 }
 .split { display:grid; gap:1.7rem; }
 .provider-photo { border-radius:1rem; border:1px solid var(--border); box-shadow:var(--shadow); }
@@ -141,6 +210,9 @@ form input, form textarea { width:100%; margin-top:.35rem; border:1px solid #a8b
 }
 
 @media (prefers-reduced-motion: reduce) {
+  section {
+    animation: none;
+  }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
