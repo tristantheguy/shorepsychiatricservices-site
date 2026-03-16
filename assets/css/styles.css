@@ -52,6 +52,25 @@ img { max-width: 100%; height: auto; }
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
+.top-social-bar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(20, 50, 69, 0.94);
+}
+
+.top-social-link {
+  display: inline-flex;
+  padding: 0.45rem 0;
+  color: #e9f4fa;
+  text-decoration: none;
+  font-size: 0.93rem;
+  font-weight: 550;
+}
+
+.top-social-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 .nav-wrap { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:74px; }
 .brand { font-weight:700; text-decoration:none; color:var(--text); }
 
