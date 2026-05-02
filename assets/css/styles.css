@@ -269,3 +269,8 @@ main section { padding:3.6rem 0; }
   .fade-in-card.is-visible { opacity: 1; transform: none; transition: none; }
   *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
 }
+
+
+.treatment-callout h2,
+.treatment-callout h3 { margin-top: 0; }
+.treatment-callout p { margin-bottom: 0; }
