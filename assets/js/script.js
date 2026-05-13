@@ -165,39 +165,3 @@ const yearNode = document.querySelector('#year');
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
 }
-
-
-const zocdocPracticeId = '174847';
-const zocdocHref = 'https://www.zocdoc.com/practice/shore-psychiatric-services-llc-174847?lock=true&isNewPatient=false&referrerType=widget';
-
-const ensureZocdocScript = () => {
-  if (document.getElementById('zocdoc-embed-script')) {
-    return;
-  }
-
-  const script = document.createElement('script');
-  script.id = 'zocdoc-embed-script';
-  script.type = 'text/javascript';
-  script.async = true;
-  script.src = 'https://offsiteschedule.zocdoc.com/plugin/embed';
-  document.body.appendChild(script);
-};
-
-const mountFloatingZocdoc = () => {
-  if (document.querySelector('.floating-zocdoc')) {
-    return;
-  }
-
-  const wrapper = document.createElement('div');
-  wrapper.className = 'floating-zocdoc';
-  wrapper.innerHTML = `
-    <a href="${zocdocHref}" class="zd-plugin" data-type="book-button" data-practice-id="${zocdocPracticeId}" title="Shore Psychiatric Services LLC" aria-label="Book online with Shore Psychiatric Services on Zocdoc">
-      <img src="https://offsiteschedule.zocdoc.com/images/remote/zd_bookonline_162x48.png?type=bobjs&monolith_provider_id=174847&practice_id=pt_Rxy3WSqNQ0mNbkpPhF26nQ" alt="Book online with Shore Psychiatric Services LLC" title="Shore Psychiatric Services LLC" />
-    </a>
-  `;
-
-  document.body.appendChild(wrapper);
-};
-
-ensureZocdocScript();
-mountFloatingZocdoc();
