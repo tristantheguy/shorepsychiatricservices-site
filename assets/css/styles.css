@@ -308,12 +308,14 @@ main section { padding:3.6rem 0; }
   margin-top: 1rem;
 }
 
-.review-list {
-  display: grid;
-  gap: .9rem;
+.review-rotator {
+  position: relative;
+  min-height: 410px;
 }
 
 .review-card {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -322,7 +324,15 @@ main section { padding:3.6rem 0; }
   border: 1px solid rgba(205, 221, 231, 0.9);
   border-radius: 1rem;
   box-shadow: 0 12px 26px rgba(23, 48, 66, 0.1);
+  opacity: 0;
+  transform: translateY(14px) scale(.98);
+  animation: review-cycle 25s infinite;
 }
+
+.review-card-two { animation-delay: 5s; }
+.review-card-three { animation-delay: 10s; }
+.review-card-four { animation-delay: 15s; }
+.review-card-five { animation-delay: 20s; }
 
 .review-card-header {
   display: flex;
@@ -348,6 +358,21 @@ main section { padding:3.6rem 0; }
   color: var(--muted);
   font-size: .86rem;
   font-weight: 700;
+}
+
+@keyframes review-cycle {
+  0%, 5% { opacity: 0; transform: translateY(14px) scale(.98); }
+  8%, 18% { opacity: 1; transform: translateY(0) scale(1); }
+  22%, 100% { opacity: 0; transform: translateY(-12px) scale(.98); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-rotator { display: grid; gap: .8rem; }
+  .review-card { position: static; opacity: 1; transform: none; animation: none; }
+}
+
+@media (min-width:700px) {
+  .review-rotator { min-height: 300px; }
 }
 
 @media (min-width:900px) {
