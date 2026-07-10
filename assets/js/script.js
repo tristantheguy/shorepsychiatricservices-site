@@ -161,6 +161,32 @@ if (cards.length) {
   }
 }
 
+
+const reviewRotator = document.querySelector('.review-rotator');
+const reviewCards = reviewRotator ? Array.from(reviewRotator.querySelectorAll('.review-card')) : [];
+
+if (reviewCards.length) {
+  const showReview = (nextIndex) => {
+    reviewCards.forEach((card, index) => {
+      const isActive = index === nextIndex;
+      card.classList.toggle('is-active', isActive);
+      card.setAttribute('aria-hidden', String(!isActive));
+    });
+  };
+
+  if (reduceMotion) {
+    reviewCards.forEach((card) => card.removeAttribute('aria-hidden'));
+  } else {
+    let activeReviewIndex = 0;
+    showReview(activeReviewIndex);
+
+    window.setInterval(() => {
+      activeReviewIndex = (activeReviewIndex + 1) % reviewCards.length;
+      showReview(activeReviewIndex);
+    }, 5000);
+  }
+}
+
 const yearNode = document.querySelector('#year');
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
