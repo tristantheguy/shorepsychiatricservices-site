@@ -308,14 +308,12 @@ main section { padding:3.6rem 0; }
   margin-top: 1rem;
 }
 
-.review-rotator {
-  position: relative;
-  min-height: 180px;
+.review-list {
+  display: grid;
+  gap: .9rem;
 }
 
 .review-card {
-  position: absolute;
-  inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -324,20 +322,20 @@ main section { padding:3.6rem 0; }
   border: 1px solid rgba(205, 221, 231, 0.9);
   border-radius: 1rem;
   box-shadow: 0 12px 26px rgba(23, 48, 66, 0.1);
-  opacity: 0;
-  transform: translateY(14px) scale(.98);
-  animation: review-cycle 20s infinite;
 }
 
-.review-card-two { animation-delay: 5s; }
-.review-card-three { animation-delay: 10s; }
-.review-card-four { animation-delay: 15s; }
+.review-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem .7rem;
+  margin-bottom: .55rem;
+}
 
 .stars {
   color: #d89b21;
   font-size: 1.2rem;
   letter-spacing: .08em;
-  margin-bottom: .55rem;
 }
 
 .review-card p {
@@ -347,16 +345,9 @@ main section { padding:3.6rem 0; }
 }
 
 .review-card .review-source {
-  margin-top: .65rem;
   color: var(--muted);
   font-size: .86rem;
   font-weight: 700;
-}
-
-@keyframes review-cycle {
-  0%, 6% { opacity: 0; transform: translateY(14px) scale(.98); }
-  10%, 30% { opacity: 1; transform: translateY(0) scale(1); }
-  36%, 100% { opacity: 0; transform: translateY(-12px) scale(.98); }
 }
 
 @media (min-width:900px) {
@@ -367,19 +358,5 @@ main section { padding:3.6rem 0; }
 
   .insurance-grid-two {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .review-card {
-    position: static;
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-
-  .review-rotator {
-    display: grid;
-    gap: .8rem;
   }
 }
