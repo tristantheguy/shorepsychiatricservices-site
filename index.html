@@ -12,7 +12,7 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' https://www.googletagmanager.com https://offsiteschedule.zocdoc.com 'unsafe-inline'; connect-src 'self' https://www.google-analytics.com https://bob.zocdoc.com https://api.zocdoc.com https://api2.zocdoc.com https://sentry.io https://offsiteschedule.zocdoc.com; frame-src 'self' https://bob.zocdoc.com https://offsiteschedule.zocdoc.com https://www.zocdoc.com; img-src 'self' data: https: https://offsiteSchedule.zocdoc.com https://offsiteschedule.zocdoc.com https://www.zocdoc.com; font-src 'self' data: https://static.zocdoc.com; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' https://www.googletagmanager.com 'unsafe-inline'; connect-src 'self' https://www.google-analytics.com https://sentry.io; frame-src 'self'; img-src 'self' data: https:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
   <meta name="format-detection" content="telephone=no">
@@ -89,7 +89,6 @@
         <p>Calm, personalized psychiatric care rooted in the pace and values of Maryland's Eastern Shore.</p>
         <div class="cta-group">
           <a class="button" href="book-headway.html">Book with Headway</a>
-          <a class="button-secondary" href="book-alma.html">Book with Alma</a>
         </div>
       </div>
     </section>
@@ -102,7 +101,6 @@
           <img class="provider-photo" src="assets/images/tammy-headshot.jpg" alt="Tammy Lynn Merson, psychiatric provider at Shore Psychiatric Services" loading="lazy" decoding="async" />
           <div class="provider-booking">
             <a class="button button-small" href="book-headway.html">Book with Headway</a>
-            <a class="button-secondary button-small" href="book-alma.html">Book with Alma</a>
           </div>
         </div>
         <div>
@@ -193,20 +191,36 @@
     <section class="muted-panel">
       <div class="container">
         <h2 class="section-title">Ready to take the next step?</h2>
-        <p>Choose the booking option that works best for you.</p>
+        <p>Schedule securely through Headway when you are ready to begin.</p>
         <div class="cta-group">
           <a class="button" href="book-headway.html">Book with Headway</a>
-          <a class="button-secondary" href="book-alma.html">Book with Alma</a>
         </div>
         <article class="contact-box treatment-callout" style="margin-top: 1rem; max-width: 720px;">
           <h3>Medication Management and Therapy</h3>
           <p>I help people feel better by prescribing the right <strong>mental health medicines</strong> and providing <strong>talk therapy</strong>. Research shows that using medicine and therapy together works better than using just one. My goal is to use both to give you the best possible results.</p>
         </article>
-        <div class="contact-box" style="margin-top: 1rem; max-width: 360px;">
-          <h3>Book Online</h3>
-          <p>Use Zocdoc to request your appointment online.</p>
-          <div><a style='display: block' href='https://www.zocdoc.com/practice/shore-psychiatric-services-llc-174847?lock=true&isNewPatient=false&referrerType=widget' class='zd-plugin' data-type='book-button' data-practice-id='174847' title='Shore Psychiatric Services LLC'><img src='https://offsiteSchedule.zocdoc.com/images/remote/zd_bookonline_162x48.png?type=bobjs&monolith_provider_id=174847&practice_id=pt_Rxy3WSqNQ0mNbkpPhF26nQ' alt='Shore Psychiatric Services LLC' title='Shore Psychiatric Services LLC' style='border: 0'/></a></div>
-        </div>
+        <article class="google-reviews" aria-labelledby="google-reviews-title">
+          <div>
+            <p class="eyebrow">Google reviews</p>
+            <h3 id="google-reviews-title">Community feedback is growing</h3>
+            <p>Shore Psychiatric Services is receiving feedback on Google. Visit the public Google Business Profile to read the latest reviews.</p>
+            <a class="button-secondary button-small" href="https://www.google.com/search?q=shore+psychiatric+services" target="_blank" rel="noopener noreferrer">Read Google reviews</a>
+          </div>
+          <div class="review-rotator" aria-label="Google review highlights">
+            <div class="review-card review-card-one">
+              <span class="stars" aria-label="Google review highlight">Google</span>
+              <p>Patients can share their experience directly on Google.</p>
+            </div>
+            <div class="review-card review-card-two">
+              <span class="stars" aria-label="Google review highlight">Google</span>
+              <p>New public reviews help local families learn about the practice.</p>
+            </div>
+            <div class="review-card review-card-three">
+              <span class="stars" aria-label="Google review highlight">Google</span>
+              <p>Feedback supports trust, transparency, and continued improvement.</p>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   </main>
@@ -217,10 +231,6 @@
       <p>&copy; <span id="year"></span> Shore Psychiatric Services. All rights reserved.</p>
     </div>
   </footer>
-  <div class="floating-zocdoc">
-    <div><a style='display: block' href='https://www.zocdoc.com/practice/shore-psychiatric-services-llc-174847?lock=true&isNewPatient=false&referrerType=widget' class='zd-plugin' data-type='book-button' data-practice-id='174847' title='Shore Psychiatric Services LLC'><img src='https://offsiteSchedule.zocdoc.com/images/remote/zd_bookonline_162x48.png?type=bobjs&monolith_provider_id=174847&practice_id=pt_Rxy3WSqNQ0mNbkpPhF26nQ' alt='Shore Psychiatric Services LLC' title='Shore Psychiatric Services LLC' style='border: 0'/></a></div>
-  </div>
-  <script>(function (d) {var script = d.createElement('script'); script.type = 'text/javascript'; script.async = true; script.src = 'https://offsiteschedule.zocdoc.com/plugin/embed';var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);})(document);</script>
   <script src="/assets/js/script.js"></script>
 </body>
 </html>
