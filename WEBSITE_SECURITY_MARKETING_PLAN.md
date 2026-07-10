@@ -25,7 +25,7 @@
 3. **Structured proof elements**
    - Add testimonials workflow (compliant, de-identified), FAQ schema, and clearer insurance/payment blocks.
 4. **Reduce friction in booking funnel**
-   - A/B test CTA copy, booking order (Headway/Alma/Zocdoc), and step labeling.
+   - A/B test CTA copy, booking order (Headway), and step labeling.
    - Add “new patient checklist” and average time-to-first-appointment copy.
 
 ## 3) Technical SEO + discoverability upgrades
