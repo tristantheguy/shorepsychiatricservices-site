@@ -301,6 +301,13 @@ main section { padding:3.6rem 0; }
   margin-bottom: .45rem;
 }
 
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: 1rem;
+}
+
 .review-rotator {
   position: relative;
   min-height: 180px;
